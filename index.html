@@ -2,19 +2,78 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Construtora de Tijolos Ecológicos</title>
+  <title>Casa de Tijolo Ecológico - Construindo seu futuro sustentável</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Casa de Tijolo Ecológico: Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
+  <meta name="keywords" content="tijolo ecológico, construção sustentável, casas ecológicas, venda de tijolos, construção residencial, construção comercial, área de lazer, projetos sustentáveis">
+  <meta name="author" content="Casa de Tijolo Ecológico">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Casa de Tijolo Ecológico - Construindo seu futuro sustentável">
+  <meta property="og:description" content="Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
+  <meta property="og:image" content="URL_DA_IMAGEM_DESTAQUE">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="URL_DO_SEU_SITE">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:title" content="Casa de Tijolo Ecológico - Construindo seu futuro sustentável">
+  <meta name="twitter:description" content="Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
+  <meta name="twitter:image" content="URL_DA_IMAGEM_DESTAQUE">
+  <meta name="twitter:card" content="summary_large_image">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <!-- Fontes do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  
   <!-- Estilos Personalizados -->
   <style>
+    html {
+    scroll-behavior: smooth;
+    }
     body {
       font-family: 'Roboto', sans-serif;
     }
     h1, h2, h3 {
       font-family: 'Oswald', sans-serif;
+    }
+    /* Estilos para o ícone do menu */
+    .menu-icon {
+      transition: transform 0.3s ease;
+    }
+    .menu-icon.open {
+      transform: rotate(90deg);
+    }
+    /* Estilos para o lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -23,12 +82,12 @@
   <!-- Cabeçalho -->
   <header class="bg-orange-600 text-white fixed top-0 w-full z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Tijolo Ecológico</h1>
+      <h1 class="text-2xl font-bold">Casa de Tijolo Ecológico</h1>
       <nav>
-        <button class="md:hidden block" id="menu-button">
-          <!-- Ícone de menu -->
-          <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M4 5h16M4 12h16M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <button class="md:hidden block focus:outline-none" id="menu-button">
+          <!-- Ícone de menu com animação -->
+          <svg class="h-6 w-6 fill-current menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path id="menu-icon-path" d="M4 5h16M4 12h16M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
         <ul class="md:flex space-x-4 hidden md:block" id="menu">
@@ -58,13 +117,13 @@
   <div class="pt-16"></div>
 
   <!-- Seção Principal -->
-  <section id="home" class="bg-cover bg-center h-screen" style="background-image: url('https://replicate.delivery/czjl/Kq5D3qoTatrPB5SOe4kWdKcmmdMNq2eKDuTR42zhjircLKkTA/out..png');">
+  <section id="home" class="bg-cover bg-center h-screen" style="background-image: url('./capa.png');">
     <div class="bg-black bg-opacity-50 h-full flex items-center">
       <div class="container mx-auto text-center text-white">
         <h2 class="text-4xl md:text-6xl font-bold">
-          Construa seu <span class="text-orange-500">Futuro Ecológico</span>
+          Construa seu <span class="text-orange-500">futuro ecológico</span>
         </h2>
-        <p class="mt-4 text-xl">Utilizando tijolos ecológicos de alta qualidade para estruturas duráveis.</p>
+        <p class="mt-4 text-xl">Temos a mão de obra especializada para execução da obra de alta qualidade para estruturas duráveis.</p>
         <a href="#contact" class="mt-8 inline-block bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded">Entre em Contato</a>
       </div>
     </div>
@@ -113,7 +172,9 @@
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Possibilidade 1 -->
         <div class="bg-white rounded shadow">
-          <img src="https://static.wixstatic.com/media/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp/v1/crop/x_0,y_7,w_500,h_296,q_80,enc_auto/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp" alt="Casas Residenciais" class="w-full h-48 object-cover rounded-t">
+          <a href="#lightbox1">
+            <img src="https://static.wixstatic.com/media/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp/v1/crop/x_0,y_7,w_500,h_296,q_80,enc_auto/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp" alt="Casas Residenciais" class="w-full h-48 object-cover rounded-t cursor-pointer">
+          </a>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2 text-orange-600">Casas Residenciais</h3>
             <p>Construção de casas modernas e sustentáveis, com excelente conforto térmico e acústico.</p>
@@ -121,7 +182,9 @@
         </div>
         <!-- Possibilidade 2 -->
         <div class="bg-white rounded shadow">
-          <img src="https://static.wixstatic.com/media/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg/v1/fill/w_892,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg" alt="Edifícios Comerciais" class="w-full h-48 object-cover rounded-t">
+          <a href="#lightbox2">
+            <img src="https://static.wixstatic.com/media/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg/v1/fill/w_892,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg" alt="Edifícios Comerciais" class="w-full h-48 object-cover rounded-t cursor-pointer">
+          </a>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2 text-orange-600">Edifícios Comerciais</h3>
             <p>Projetos comerciais que aliam sustentabilidade e funcionalidade, reduzindo custos operacionais.</p>
@@ -129,15 +192,34 @@
         </div>
         <!-- Possibilidade 3 -->
         <div class="bg-white rounded shadow">
-          <img src="https://static.wixstatic.com/media/c5768b_3204e4fe9aaa435dbb276ec5a7c4255f~mv2.webp/v1/crop/x_27,y_38,w_446,h_300,q_80,enc_auto/c5768b_3204e4fe9aaa435dbb276ec5a7c4255f~mv2.webp" alt="Espaços Comunitários" class="w-full h-48 object-cover rounded-t">
+          <a href="#lightbox3">
+            <img src="https://i.pinimg.com/564x/71/b9/49/71b94967a903a2ffd60d326b22d9ac2a.jpg" alt="Espaços Comunitários" class="w-full h-48 object-cover rounded-t cursor-pointer">
+          </a>
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-orange-600">Espaços de lazer</h3>
-            <p>Ambiente social como churraqueiras para momentos sociais.</p>
+            <h3 class="text-xl font-bold mb-2 text-orange-600">Espaços Comunitários</h3>
+            <p>Centros comunitários e educativos que promovem a consciência ambiental e social.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Lightboxes -->
+  <!-- Lightbox 1 -->
+  <div id="lightbox1" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="https://static.wixstatic.com/media/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp/v1/crop/x_0,y_7,w_500,h_296,q_80,enc_auto/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp" alt="Casas Residenciais">
+  </div>
+  <!-- Lightbox 2 -->
+  <div id="lightbox2" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="https://static.wixstatic.com/media/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg/v1/fill/w_892,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg" alt="Edifícios Comerciais">
+  </div>
+  <!-- Lightbox 3 -->
+  <div id="lightbox3" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="https://i.pinimg.com/564x/71/b9/49/71b94967a903a2ffd60d326b22d9ac2a.jpg" alt="Espaços Comunitários">
+  </div>
 
   <!-- Serviços -->
   <section id="services" class="bg-orange-100 py-16">
@@ -163,42 +245,89 @@
     </div>
   </section>
 
-  <!-- Contato -->
+   <!-- Contato -->
   <section id="contact" class="py-16">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center text-orange-600 mb-8">Entre em Contato</h2>
-      <form class="max-w-lg mx-auto">
+      <form class="max-w-lg mx-auto" id="contact-form">
         <div class="mb-4">
           <label class="block text-gray-700">Nome</label>
-          <input type="text" class="w-full mt-2 p-2 border rounded" placeholder="Seu nome">
+          <input type="text" name="name" class="w-full mt-2 p-2 border rounded" placeholder="Seu nome" required>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700">E-mail</label>
-          <input type="email" class="w-full mt-2 p-2 border rounded" placeholder="Seu e-mail">
+          <input type="email" name="email" class="w-full mt-2 p-2 border rounded" placeholder="Seu e-mail" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Tipo de Serviço</label>
+          <select name="service" class="w-full mt-2 p-2 border rounded" required>
+            <option value="">Selecione um serviço</option>
+            <option value="Comprar tijolos">Comprar tijolos</option>
+            <option value="Construção de residência">Construção de residência</option>
+            <option value="Construção comercial">Construção comercial</option>
+            <option value="Área de lazer">Área de lazer</option>
+            <option value="Outros">Outros</option>
+          </select>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700">Mensagem</label>
-          <textarea class="w-full mt-2 p-2 border rounded" rows="5" placeholder="Sua mensagem"></textarea>
+          <textarea name="message" class="w-full mt-2 p-2 border rounded" rows="5" placeholder="Descreva sua necessidade" required></textarea>
         </div>
-        <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded">Enviar</button>
+        <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded">Enviar Mensagem</button>
       </form>
+    </div>
+  </section>
+
+  <!-- E-mail de Contato -->
+  <section class="bg-orange-600 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>Entre em contato pelo e-mail: <a href="mailto:suporteng.eco@gmail.com" class="underline">suporteng.eco@gmail.com</a></p>
     </div>
   </section>
 
   <!-- Rodapé -->
   <footer class="bg-orange-600 text-white py-4">
     <div class="container mx-auto text-center">
-      <p>&copy; 2023 EcoTijolos. Todos os direitos reservados.</p>
+      <p>&copy; 2023 Casa de Tijolo Ecológico. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- Script para o menu mobile -->
+  <!-- Script para o menu mobile e formulário -->
   <script>
     const menuButton = document.getElementById('menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconPath = document.getElementById('menu-icon-path');
 
     menuButton.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+      // Alterna a classe 'open' para a animação
+      menuButton.querySelector('.menu-icon').classList.toggle('open');
+      // Altera o ícone entre menu e x
+      if (menuButton.querySelector('.menu-icon').classList.contains('open')) {
+        menuIconPath.setAttribute('d', 'M4 6L20 18M4 18L20 6');
+      } else {
+        menuIconPath.setAttribute('d', 'M4 5h16M4 12h16M4 19h16');
+      }
+    });
+
+    // Script para enviar mensagem via WhatsApp
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = encodeURIComponent(contactForm.name.value);
+      const email = encodeURIComponent(contactForm.email.value);
+      const service = encodeURIComponent(contactForm.service.value);
+      const message = encodeURIComponent(contactForm.message.value);
+
+      const whatsappNumber = '5511973441970'; // Inclui o código do país (55 para Brasil)
+      const whatsappMessage = `Olá, meu nome é ${decodeURIComponent(name)}.%0ATenho interesse em ${decodeURIComponent(service)}.%0A%0ADetalhes:%0A${decodeURIComponent(message)}%0A%0AMeu e-mail: ${decodeURIComponent(email)}`;
+
+      const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
+
+      // Redireciona para o WhatsApp
+      window.open(whatsappURL, '_blank');
     });
   </script>
 
