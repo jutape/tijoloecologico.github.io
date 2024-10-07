@@ -1,52 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Casa de Tijolo Ecológico - Construindo seu futuro sustentável</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Casa de Tijolo Ecológico: Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
-  <meta name="keywords" content="tijolo ecológico, construção sustentável, casas ecológicas, venda de tijolos, construção residencial, construção comercial, área de lazer, projetos sustentáveis">
+  <meta name="description"
+    content="Casa de Tijolo Ecológico: Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
+  <meta name="keywords"
+    content="tijolo ecológico, construção sustentável, casas ecológicas, venda de tijolos, construção residencial, construção comercial, área de lazer, projetos sustentáveis">
   <meta name="author" content="Casa de Tijolo Ecológico">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Casa de Tijolo Ecológico - Construindo seu futuro sustentável">
-  <meta property="og:description" content="Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
-  <meta property="og:image" content="URL_DA_IMAGEM_DESTAQUE">
+  <meta property="og:description"
+    content="Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
+  <meta property="og:image" content="https://jutape.github.io/tijoloecologico.github.io/capa.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="URL_DO_SEU_SITE">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:title" content="Casa de Tijolo Ecológico - Construindo seu futuro sustentável">
-  <meta name="twitter:description" content="Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
-  <meta name="twitter:image" content="URL_DA_IMAGEM_DESTAQUE">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description"
+    content="Construções sustentáveis com tijolos ecológicos. Oferecemos venda de tijolos, construções residenciais e comerciais, e projetos personalizados para áreas de lazer.">
+  <meta name="twitter:image" content="https://jutape.github.io/tijoloecologico.github.io/capa.png">
+  <meta name="twitter:card" content="https://jutape.github.io/tijoloecologico.github.io/capa.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- Fontes do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Oswald:wght@700&display=swap" rel="stylesheet">
-  
+
   <!-- Estilos Personalizados -->
   <style>
     html {
-    scroll-behavior: smooth;
+      scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
     }
-    h1, h2, h3 {
+
+    h1,
+    h2,
+    h3 {
       font-family: 'Oswald', sans-serif;
     }
+
+    /* Estilos para o cabeçalho */
+    .header {
+      transition: background-color 0.3s ease, padding 0.3s ease;
+    }
+
+    .header.transparent {
+      background-color: transparent;
+      padding: 1rem 0;
+    }
+
+    .header.scrolled {
+      background-color: #ea580c;
+      /* bg-orange-600 */
+      padding: 0rem 0;
+    }
+
     /* Estilos para o ícone do menu */
     .menu-icon {
       transition: transform 0.3s ease;
     }
+
     .menu-icon.open {
       transform: rotate(90deg);
     }
+
     /* Estilos para o lightbox */
     .lightbox {
       position: fixed;
@@ -60,13 +88,16 @@
       align-items: center;
       z-index: 1000;
     }
+
     .lightbox img {
       max-width: 90%;
       max-height: 80%;
     }
+
     .lightbox:target {
       display: flex;
     }
+
     .lightbox-close {
       position: absolute;
       top: 20px;
@@ -77,26 +108,28 @@
     }
   </style>
 </head>
+
 <body class="bg-orange-50">
-  
+
   <!-- Cabeçalho -->
-  <header class="bg-orange-600 text-white fixed top-0 w-full z-50">
+  <header class="header fixed top-0 w-full z-50 transparent">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Casa de Tijolo Ecológico</h1>
+      <h1 class="text-2xl font-bold text-white">Casa de Tijolo Ecológico</h1>
       <nav>
         <button class="md:hidden block focus:outline-none" id="menu-button">
           <!-- Ícone de menu com animação -->
-          <svg class="h-6 w-6 fill-current menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path id="menu-icon-path" d="M4 5h16M4 12h16M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <svg class="h-6 w-6 fill-current text-white menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path id="menu-icon-path" d="M4 5h16M4 12h16M4 19h16" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" />
           </svg>
         </button>
         <ul class="md:flex space-x-4 hidden md:block" id="menu">
-          <li><a href="#home" class="hover:text-orange-200">Início</a></li>
-          <li><a href="#about" class="hover:text-orange-200">Sobre Nós</a></li>
-          <li><a href="#ecobricks" class="hover:text-orange-200">Tijolo Ecológico</a></li>
-          <li><a href="#possibilities" class="hover:text-orange-200">O que Fazemos</a></li>
-          <li><a href="#services" class="hover:text-orange-200">Serviços</a></li>
-          <li><a href="#contact" class="hover:text-orange-200">Contato</a></li>
+          <li><a href="#home" class="text-white hover:text-orange-200">Início</a></li>
+          <li><a href="#about" class="text-white hover:text-orange-200">Sobre Nós</a></li>
+          <li><a href="#ecobricks" class="text-white hover:text-orange-200">Tijolo Ecológico</a></li>
+          <li><a href="#possibilities" class="text-white hover:text-orange-200">O que Fazemos</a></li>
+          <li><a href="#services" class="text-white hover:text-orange-200">Serviços</a></li>
+          <li><a href="#contact" class="text-white hover:text-orange-200">Contato</a></li>
         </ul>
       </nav>
     </div>
@@ -113,8 +146,6 @@
     </div>
   </header>
 
-  <!-- Espaço para compensar o cabeçalho fixo -->
-  <div class="pt-16"></div>
 
   <!-- Seção Principal -->
   <section id="home" class="bg-cover bg-center h-screen" style="background-image: url('./capa.png');">
@@ -123,8 +154,10 @@
         <h2 class="text-4xl md:text-6xl font-bold">
           Construa seu <span class="text-orange-500">futuro ecológico</span>
         </h2>
-        <p class="mt-4 text-xl">Temos a mão de obra especializada para execução da obra de alta qualidade para estruturas duráveis.</p>
-        <a href="#contact" class="mt-8 inline-block bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded">Entre em Contato</a>
+        <p class="mt-4 text-xl">Temos a mão de obra especializada para execução da obra de alta qualidade para
+          estruturas duráveis.</p>
+        <a href="#contact"
+          class="mt-8 inline-block bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded">Entre em Contato</a>
       </div>
     </div>
   </section>
@@ -133,7 +166,9 @@
   <section id="about" class="py-16">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center text-orange-600 mb-8">Sobre Nós</h2>
-      <p class="text-center max-w-2xl mx-auto">Somos uma construtora especializada em tijolos ecológicos, comprometida com a sustentabilidade e inovação no setor da construção civil. Nosso objetivo é fornecer soluções eficientes e ambientalmente responsáveis para nossos clientes.</p>
+      <p class="text-center max-w-2xl mx-auto">Somos uma construtora especializada em tijolos ecológicos, comprometida
+        com a sustentabilidade e inovação no setor da construção civil. Nosso objetivo é fornecer soluções eficientes e
+        ambientalmente responsáveis para nossos clientes.</p>
     </div>
   </section>
 
@@ -142,14 +177,20 @@
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center text-orange-600 mb-8">Tijolo Ecológico</h2>
       <p class="text-center max-w-3xl mx-auto mb-8">
-        O tijolo ecológico é uma mistura de terra arenosa com cimento e água, batida em uma betoneira comum e depois prensada em uma máquina que pode atingir até 12 toneladas de pressão. Após a prensagem, o tijolo, que possui dois furos característicos, é colocado em paletes para um período de cura.
+        O tijolo ecológico é uma mistura de terra arenosa com cimento e água, batida em uma betoneira comum e depois
+        prensada em uma máquina que pode atingir até 12 toneladas de pressão. Após a prensagem, o tijolo, que possui
+        dois furos característicos, é colocado em paletes para um período de cura.
       </p>
       <p class="text-center max-w-3xl mx-auto mb-8">
-        Normalmente, o tijolo demora cerca de três dias para ficar pronto para uso. Durante esse tempo, permanece coberto para evitar a rápida secagem, o que poderia enfraquecer o produto. Para uma cura perfeita, é ideal que o tijolo seja molhado pelo menos uma vez por dia até que esteja completamente seco e pronto para uso.
+        Normalmente, o tijolo demora cerca de três dias para ficar pronto para uso. Durante esse tempo, permanece
+        coberto para evitar a rápida secagem, o que poderia enfraquecer o produto. Para uma cura perfeita, é ideal que o
+        tijolo seja molhado pelo menos uma vez por dia até que esteja completamente seco e pronto para uso.
       </p>
       <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <img src="https://static.wixstatic.com/media/c5768b_714a19be257a43739e94016eba23a3c3~mv2.jpg/v1/fill/w_627,h_393,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_714a19be257a43739e94016eba23a3c3~mv2.jpg" alt="Tijolos Ecológicos" class="w-full h-64 object-cover rounded">
+          <img
+            src="https://static.wixstatic.com/media/c5768b_714a19be257a43739e94016eba23a3c3~mv2.jpg/v1/fill/w_627,h_393,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_714a19be257a43739e94016eba23a3c3~mv2.jpg"
+            alt="Tijolos Ecológicos" class="w-full h-64 object-cover rounded">
         </div>
         <div class="flex items-center">
           <ul class="list-disc list-inside text-gray-700">
@@ -168,12 +209,15 @@
   <section id="possibilities" class="py-16">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center text-orange-600 mb-8">O que é Possível Construir</h2>
-      <p class="text-center max-w-2xl mx-auto mb-8">Com tijolos ecológicos, é possível construir uma variedade de estruturas sustentáveis e inovadoras. Confira algumas possibilidades:</p>
+      <p class="text-center max-w-2xl mx-auto mb-8">Com tijolos ecológicos, é possível construir uma variedade de
+        estruturas sustentáveis e inovadoras. Confira algumas possibilidades:</p>
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Possibilidade 1 -->
         <div class="bg-white rounded shadow">
           <a href="#lightbox1">
-            <img src="https://static.wixstatic.com/media/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp/v1/crop/x_0,y_7,w_500,h_296,q_80,enc_auto/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp" alt="Casas Residenciais" class="w-full h-48 object-cover rounded-t cursor-pointer">
+            <img
+              src="https://static.wixstatic.com/media/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp/v1/crop/x_0,y_7,w_500,h_296,q_80,enc_auto/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp"
+              alt="Casas Residenciais" class="w-full h-48 object-cover rounded-t cursor-pointer">
           </a>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2 text-orange-600">Casas Residenciais</h3>
@@ -183,7 +227,9 @@
         <!-- Possibilidade 2 -->
         <div class="bg-white rounded shadow">
           <a href="#lightbox2">
-            <img src="https://static.wixstatic.com/media/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg/v1/fill/w_892,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg" alt="Edifícios Comerciais" class="w-full h-48 object-cover rounded-t cursor-pointer">
+            <img
+              src="https://static.wixstatic.com/media/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg/v1/fill/w_892,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg"
+              alt="Edifícios Comerciais" class="w-full h-48 object-cover rounded-t cursor-pointer">
           </a>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2 text-orange-600">Edifícios Comerciais</h3>
@@ -193,7 +239,8 @@
         <!-- Possibilidade 3 -->
         <div class="bg-white rounded shadow">
           <a href="#lightbox3">
-            <img src="https://i.pinimg.com/564x/71/b9/49/71b94967a903a2ffd60d326b22d9ac2a.jpg" alt="Espaços Comunitários" class="w-full h-48 object-cover rounded-t cursor-pointer">
+            <img src="https://i.pinimg.com/564x/71/b9/49/71b94967a903a2ffd60d326b22d9ac2a.jpg"
+              alt="Espaços Comunitários" class="w-full h-48 object-cover rounded-t cursor-pointer">
           </a>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2 text-orange-600">Espaços Comunitários</h3>
@@ -208,12 +255,16 @@
   <!-- Lightbox 1 -->
   <div id="lightbox1" class="lightbox">
     <a href="#" class="lightbox-close">&times;</a>
-    <img src="https://static.wixstatic.com/media/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp/v1/crop/x_0,y_7,w_500,h_296,q_80,enc_auto/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp" alt="Casas Residenciais">
+    <img
+      src="https://static.wixstatic.com/media/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp/v1/crop/x_0,y_7,w_500,h_296,q_80,enc_auto/c5768b_557ca95e2f1645388fa2b7535b6fa5d0~mv2.webp"
+      alt="Casas Residenciais">
   </div>
   <!-- Lightbox 2 -->
   <div id="lightbox2" class="lightbox">
     <a href="#" class="lightbox-close">&times;</a>
-    <img src="https://static.wixstatic.com/media/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg/v1/fill/w_892,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg" alt="Edifícios Comerciais">
+    <img
+      src="https://static.wixstatic.com/media/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg/v1/fill/w_892,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c5768b_0db63cc314bf47c59483e021a4a64e98~mv2.jpg"
+      alt="Edifícios Comerciais">
   </div>
   <!-- Lightbox 3 -->
   <div id="lightbox3" class="lightbox">
@@ -245,7 +296,7 @@
     </div>
   </section>
 
-   <!-- Contato -->
+  <!-- Contato -->
   <section id="contact" class="py-16">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center text-orange-600 mb-8">Entre em Contato</h2>
@@ -271,29 +322,52 @@
         </div>
         <div class="mb-4">
           <label class="block text-gray-700">Mensagem</label>
-          <textarea name="message" class="w-full mt-2 p-2 border rounded" rows="5" placeholder="Descreva sua necessidade" required></textarea>
+          <textarea name="message" class="w-full mt-2 p-2 border rounded" rows="5"
+            placeholder="Descreva sua necessidade" required></textarea>
         </div>
-        <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded">Enviar Mensagem</button>
+        <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded">Enviar
+          Mensagem</button>
       </form>
     </div>
   </section>
 
-  <!-- E-mail de Contato -->
-  <section class="bg-orange-600 text-white py-4">
-    <div class="container mx-auto text-center">
-      <p>Entre em contato pelo e-mail: <a href="mailto:suporteng.eco@gmail.com" class="underline">suporteng.eco@gmail.com</a></p>
-    </div>
-  </section>
-
   <!-- Rodapé -->
-  <footer class="bg-orange-600 text-white py-4">
-    <div class="container mx-auto text-center">
+  <footer class="bg-orange-600 text-white py-8">
+    <div class="container mx-auto text-center space-y-6">
+      <!-- E-mail de Contato -->
+      <p>Entre em contato pelo e-mail: <a href="mailto:suporteng.eco@gmail.com"
+          class="underline">suporteng.eco@gmail.com</a></p>
+      <!-- Botões de WhatsApp -->
+      <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+        <!-- Botão WhatsApp 1 -->
+        <a href="https://api.whatsapp.com/send?phone=5511953856887" target="_blank"
+          class="flex items-center bg-white text-orange-600 px-4 py-2 rounded hover:bg-gray-100">
+          <!-- Ícone do WhatsApp -->
+          <svg class="h-6 w-6 mr-2" viewBox="0 0 32 32" fill="currentColor">
+            <path
+              d="M16 0C7.164 0 0 7.163 0 16c0 2.844.746 5.6 2.165 8.038L.052 32l8.148-2.133A15.895 15.895 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm0 29.457c-2.63 0-5.205-.693-7.457-2.003l-.528-.31-4.846 1.268 1.293-4.729-.344-.56A13.13 13.13 0 012.87 16C2.87 8.834 8.835 2.87 16 2.87S29.13 8.835 29.13 16 23.165 29.13 16 29.13zm7.607-10.76c-.417-.209-2.468-1.217-2.85-1.354-.381-.139-.658-.209-.934.209-.277.417-1.077 1.354-1.32 1.63-.242.277-.485.313-.901.104-.417-.209-1.761-.649-3.358-2.07-1.242-1.11-2.082-2.487-2.324-2.904-.242-.417-.026-.642.182-.85.188-.188.417-.486.625-.73.208-.242.277-.417.417-.696.139-.278.07-.522-.035-.731-.104-.209-.934-2.254-1.281-3.093-.336-.812-.678-.703-.934-.716h-.799c-.278 0-.731.104-1.113.522-.381.417-1.45 1.416-1.45 3.456s1.486 4.006 1.693 4.286c.208.278 2.919 4.447 7.077 6.238 4.158 1.792 4.158 1.195 4.904 1.123.746-.07 2.468-1.003 2.814-1.974.347-.971.347-1.806.242-1.975-.104-.17-.381-.277-.798-.486z" />
+          </svg>
+          11 95385 6887
+        </a>
+        <!-- Botão WhatsApp 2 -->
+        <a href="https://api.whatsapp.com/send?phone=5511973441970" target="_blank"
+          class="flex items-center bg-white text-orange-600 px-4 py-2 rounded hover:bg-gray-100">
+          <!-- Ícone do WhatsApp -->
+          <svg class="h-6 w-6 mr-2" viewBox="0 0 32 32" fill="currentColor">
+            <path
+              d="M16 0C7.164 0 0 7.163 0 16c0 2.844.746 5.6 2.165 8.038L.052 32l8.148-2.133A15.895 15.895 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm0 29.457c-2.63 0-5.205-.693-7.457-2.003l-.528-.31-4.846 1.268 1.293-4.729-.344-.56A13.13 13.13 0 012.87 16C2.87 8.834 8.835 2.87 16 2.87S29.13 8.835 29.13 16 23.165 29.13 16 29.13zm7.607-10.76c-.417-.209-2.468-1.217-2.85-1.354-.381-.139-.658-.209-.934.209-.277.417-1.077 1.354-1.32 1.63-.242.277-.485.313-.901.104-.417-.209-1.761-.649-3.358-2.07-1.242-1.11-2.082-2.487-2.324-2.904-.242-.417-.026-.642.182-.85.188-.188.417-.486.625-.73.208-.242.277-.417.417-.696.139-.278.07-.522-.035-.731-.104-.209-.934-2.254-1.281-3.093-.336-.812-.678-.703-.934-.716h-.799c-.278 0-.731.104-1.113.522-.381.417-1.45 1.416-1.45 3.456s1.486 4.006 1.693 4.286c.208.278 2.919 4.447 7.077 6.238 4.158 1.792 4.158 1.195 4.904 1.123.746-.07 2.468-1.003 2.814-1.974.347-.971.347-1.806.242-1.975-.104-.17-.381-.277-.798-.486z" />
+          </svg>
+          11 97344 1970
+        </a>
+      </div>
+      <!-- Copyright -->
       <p>&copy; 2023 Casa de Tijolo Ecológico. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- Script para o menu mobile e formulário -->
+  <!-- Scripts -->
   <script>
+    // Menu mobile
     const menuButton = document.getElementById('menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIconPath = document.getElementById('menu-icon-path');
@@ -310,10 +384,38 @@
       }
     });
 
+    // Mudança de cor do cabeçalho ao rolar a página
+    const header = document.querySelector('.header');
+    const heroSection = document.getElementById('home');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > heroSection.offsetHeight - header.offsetHeight) {
+        header.classList.remove('transparent');
+        header.classList.add('scrolled');
+        // Mudar a cor do texto para preto
+        header.querySelectorAll('a').forEach(link => link.classList.remove('text-white'));
+        header.querySelectorAll('a').forEach(link => link.classList.add('text-white'));
+        menuButton.querySelector('.menu-icon').classList.remove('text-white');
+        menuButton.querySelector('.menu-icon').classList.add('text-white');
+        header.querySelector('h1').classList.remove('text-white');
+        header.querySelector('h1').classList.add('text-white');
+      } else {
+        header.classList.add('transparent');
+        header.classList.remove('scrolled');
+        // Mudar a cor do texto para branco
+        header.querySelectorAll('a').forEach(link => link.classList.remove('text-white'));
+        header.querySelectorAll('a').forEach(link => link.classList.add('text-white'));
+        menuButton.querySelector('.menu-icon').classList.remove('text-white');
+        menuButton.querySelector('.menu-icon').classList.add('text-white');
+        header.querySelector('h1').classList.remove('text-white');
+        header.querySelector('h1').classList.add('text-white');
+      }
+    });
+
     // Script para enviar mensagem via WhatsApp
     const contactForm = document.getElementById('contact-form');
 
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
       const name = encodeURIComponent(contactForm.name.value);
@@ -332,4 +434,5 @@
   </script>
 
 </body>
+
 </html>
